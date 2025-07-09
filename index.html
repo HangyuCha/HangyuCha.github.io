@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangyu's Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-top">
+            <a href="#home" class="nav-title">Hangyu's Portfolio</a>
+            <button class="menu-toggle">☰</button>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#career">Career</a>
+            <a href="#hobby">Hobby</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#memo">Memo</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="home-section">
+        <div class="home-container">
+            <div class="home-image">
+                <img src="/images/profile.JPG" alt="Hangyu's Photo" />
+            </div>
+            <div class="home-text">
+                <h1>Welcome to Hangyu's Website</h1>
+                <p>Hongik University</p>
+            </div>
+        </div>
+    </section>
+    <section id="career" class="career-section">
+        <div class="career-container">
+            <div class="career-logo">
+                <img src="/images/logo.jpeg" alt="Hongik logo" />
+            </div>
+            <div class="career-text">
+                <h1>Hongik University</h1>
+                <p>Software Engineering / Department of Business (Double Major)<br>(2021~)</p>
+
+                <h2>Deputy Minister of Culture, Sports and Tourism</h2>
+                <p>Student Council (2022~2023)</p>
+
+                <h2>Army Sergeant</h2>
+                <p>Honorable Discharge (2023.01.02 ~ 2024.07.01)</p>
+
+                <h2>Bayswater School in Toronto</h2>
+                <p>(2024.08 ~ 2024.12)</p>
+            </div>
+        </div>
+    </section>
+    <section id="hobby" class="hobby-section">
+        <h1 class="hobby-title">Hobby</h1>
+        <div class="hobby-grid">
+            <div class="hobby-item" onclick="openModal('modal1')">
+                <img src="/images/hobby1.heic" alt="Hobby 1">
+                <p class="hobby-label">PhtoGraph</p>
+            </div>
+            <div class="hobby-item" onclick="openModal('modal2')">
+                <img src="/images/hobby2.jpg" alt="Hobby 2">
+                <p class="hobby-label">Music</p>
+            </div>
+            <div class="hobby-item" onclick="openModal('modal3')">
+                <img src="/images/hobby3.JPG" alt="Hobby 3">
+                <p class="hobby-label">Travel</p>
+            </div>
+            <div class="hobby-item" onclick="openModal('modal4')">
+                <img src="/images/hobby4.JPG" alt="Hobby 4">
+                <p class="hobby-label">Movie</p>
+            </div>
+        </div>
+
+        <!-- 팝업 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>Photograph</h2>
+                <p>When i have spare time, I enjoy taking phogographs.</p>
+                <p>If you want to see my photograph, come and join my instagram.</p>
+                <a href="https://www.instagram.com/lgyu_haanl/" target="_blank">
+                    <img src="/images/instagram.png" alt="Go to Instagram" class="popup-instagram">
+                </a>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Music</h2>
+                <p>I love Indie music</p>
+                <p>Let me show my Music playlist.</p>
+                <a href="https://music.youtube.com/playlist?list=PL-Q-z6AJAwU9vaMwFvjfsMmjDoOqIYZ7" target="_blank">
+                    <img src="/images/youtube.png" alt="Go to Youtube" class="popup-Youtube">
+                </a>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>Travel</h2>
+                <p>I am ready to go anywhere at any time.</p>
+                <p>you can see my memories through my blog</p>
+                <a href="https://blog.naver.com/hangyucha" target="_blank">
+                    <img src="/images/blog.png" alt="Go to Blog" class="popup-Blog">
+                </a>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <h2>Movie</h2>
+                <p>Movies motivate me everytime.</p>
+                <p>I will makes some website for the movies.</p>
+                <p>(this popup will be fixed ASAP)</p>
+            </div>
+        </div>
+        <!-- 팝업 2~4도 동일한 구조 -->
+    </section>
+
+    <section id="achievement">Achievement</section>
+    <section id="memo">Memo</section>
+</main>
+
+<script src="/script/script.js"></script>
+</body>
+</html>
