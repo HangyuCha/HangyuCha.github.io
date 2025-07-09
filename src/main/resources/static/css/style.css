@@ -268,6 +268,7 @@ section {
 
 /* 팝업 안 이미지 크기 제한 */
 .popup-Youtube,
+.popup-instagram,
 .popup-Blog {
     max-width: 100%;
     max-height: 300px;
@@ -276,19 +277,10 @@ section {
     display: block;
     margin: 0 auto;
 }
-.popup-instagram {
-    max-width: 100%;
-    max-height: 300px;
-    height: auto;
-    width: auto;
-    display: block;
-    margin: 12px auto 0 auto;
-}
-
 
 /* 반응형 */
 @media (max-width: 768px) {
-    .popup-instagram {
+    .modal-content img {
         max-height: 200px;
     }
     .menu-toggle {
