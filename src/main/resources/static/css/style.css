@@ -280,6 +280,12 @@ section {
 
 /* 반응형 */
 @media (max-width: 768px) {
+    .popup-instagram,
+    .popup-Youtube,
+    .popup-Blog {
+        max-width: 120px;
+        height: auto;
+    }
     .modal-content img {
         max-height: 200px;
     }
