@@ -6,6 +6,9 @@
     <title>Hangyu's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+
 
 </head>
 <body>
@@ -20,7 +23,7 @@
             <a href="#career">Career</a>
             <a href="#hobby">Hobby</a>
             <a href="#achievement">Achievement</a>
-            <a href="#memo">Memo</a>
+            <a href="#calendar">calender</a>
         </div>
     </nav>
 </header>
@@ -290,10 +293,14 @@
         </div>
     </section>
 
-    <section id="memo">Memo</section>
+    <section id="calendar" class="calendar-section">
+        <h1 class="calendar-title">📅 My Schedule</h1>
+        <div id='calendar-container'></div>
+    </section>
+
 </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script src="script/script.js"></script>
 
 <script>
@@ -339,6 +346,6 @@
 </div>
 
 
-</div>
+
 </body>
 </html>

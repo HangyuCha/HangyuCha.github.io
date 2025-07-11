@@ -84,4 +84,41 @@ window.addEventListener("keydown", function(e) {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const calendarEl = document.getElementById('calendar-container');
+    if (!calendarEl) {
+        console.error('❌ calendar-container does not exist.');
+        return;
+    }
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        editable: true,
+        selectable: true,
+        events: [],
+        dateClick: function (info) {
+            const title = prompt('Please enter a schedule :');
+            if (title) {
+                calendar.addEvent({
+                    title: title,
+                    start: info.dateStr,
+                    allDay: true
+                });
+            }
+        },
+        eventClick: function (info) {
+            const newTitle = prompt('Delete or change the schedule to modify or delete the schedule:', info.event.title);
+            if (newTitle === null) return;
+            if (newTitle === '') {
+                info.event.remove();
+            } else {
+                info.event.setProp('title', newTitle);
+            }
+        }
+    });
+
+    calendar.render();
+});
+
+
 

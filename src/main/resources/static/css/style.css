@@ -488,6 +488,24 @@ section {
     justify-content: center;
     align-items: center;
 }
+.calendar-section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+}
+
+.calendar-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+#calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 
 
 
