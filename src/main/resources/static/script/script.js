@@ -92,10 +92,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
+
         initialView: 'dayGridMonth',
         editable: true,
         selectable: true,
         events: [],
+        eventDidMount: function(info) {
+            // 일정 위에 마우스를 올렸을 때 전체 제목 보이도록 title 속성 부여
+            info.el.title = info.event.title;
+        },
+
         dateClick: function (info) {
             const title = prompt('Please enter a schedule :');
             if (title) {

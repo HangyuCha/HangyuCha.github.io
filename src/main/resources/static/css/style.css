@@ -506,6 +506,23 @@ section {
     margin: 0 auto;
 }
 
+/* 캘린더 일정(이벤트) 텍스트 크기 조절 */
+.fc .fc-event-title {
+    font-size: 12px; /* 원하는 크기로 변경 가능 */
+}
+
+/* 날짜 숫자 크기도 조절하고 싶다면 */
+.fc .fc-daygrid-day-number {
+    font-size: 13px;
+}
+
+/* 캘린더 전체 배경색을 사이트 배경색과 맞추기 */
+#calendar, .fc {
+    background-color: #f5f5f5; /* 원하는 색상으로 맞춰주세요 */
+}
+
+
+
 
 
 
