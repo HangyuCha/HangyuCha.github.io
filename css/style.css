@@ -551,6 +551,24 @@ section {
 
 /* 반응형 */
 @media (max-width: 768px) {
+
+    .swiper-slide img {
+        width: 90%;         /* 화면 너비에 맞게 */
+        height: auto;       /* 고정 높이 제거 */
+        max-width: 100%;    /* 너무 커지지 않게 */
+    }
+
+    .swiper {
+        width: 100%;
+        height: auto;       /* swiper 전체 높이도 유연하게 */
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: auto;
+        padding: 0 10px;     /* 좌우 여백 */
+        box-sizing: border-box;
+    }
     .modal-content {
         width: 90%;
         height: auto;
