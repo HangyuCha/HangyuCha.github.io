@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hangyu's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 </head>
 <body>
 <header>
@@ -150,37 +152,43 @@
 
     <section id="achievement" class="achievement-section">
         <h1 class="achievement-title">Achievement</h1>
-        <div class="achievement-grid">
-            <div class="achievement-item" onclick="openModal('achieve1')">
-                <img src="/images/achieve_thumb1.jpg" alt="Activity 1">
-                <div class="preview-text">문화부 활동</div>
+
+        <!-- 슬라이드 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" onclick="openModal('achieve1')">
+                    <img src="/images/achieve_thumb1.jpg" alt="활동1">
+                </div>
+                <div class="swiper-slide" onclick="openModal('achieve2')">
+                    <img src="/images/achieve_thumb2.jpg" alt="활동2">
+                </div>
+                <!-- 필요한 만큼 추가 -->
             </div>
-            <div class="achievement-item" onclick="openModal('achieve2')">
-                <img src="/images/achieve_thumb2.jpg" alt="Activity 2">
-                <div class="preview-text">군복무 기간</div>
-            </div>
+            <!-- 네비 버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
 
-        <!-- 팝업 모달: 활동 1 -->
+        <!-- 팝업 1 -->
         <div id="achieve1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('achieve1')">&times;</span>
                 <h2>문화부 활동</h2>
                 <div class="modal-gallery">
-                    <img src="/images/achieve1_1.jpg">
-                    <img src="/images/achieve1_2.jpg">
+                    <img src="/images/pic4.heic">
+                    <img src="/images/pic5.HEIC">
                 </div>
             </div>
         </div>
 
-        <!-- 팝업 모달: 활동 2 -->
+        <!-- 팝업 2 -->
         <div id="achieve2" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('achieve2')">&times;</span>
-                <h2>군복무</h2>
+                <h2>문화부 활동</h2>
                 <div class="modal-gallery">
-                    <img src="/images/achieve2_1.jpg">
-                    <img src="/images/achieve2_2.jpg">
+                    <img src="/images/pic6.heic">
+                    <img src="/images/pic7.HEIC">
                 </div>
             </div>
         </div>
@@ -188,7 +196,40 @@
 
     <section id="memo">Memo</section>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script src="script/script.js"></script>
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 3
+            }
+        }
+    });
+
+
+    function openModal(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
 </body>
 </html>
