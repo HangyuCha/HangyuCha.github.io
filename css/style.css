@@ -727,6 +727,22 @@ section {
         font-size: 32px;
         padding: 16px; /* ✅ 더 넓은 터치 영역 */
     }
+    .fc-toolbar-title {
+        font-size: 18px !important;  /* 📆 제목 줄이기 (예: JULY 2025) */
+    }
+
+    .fc-button {
+        font-size: 12px !important;  /* 📆 today / < / > 버튼 */
+        padding: 4px 8px !important;
+    }
+
+    .fc .fc-button .fc-icon {
+        font-size: 14px !important; /* 아이콘(화살표) 크기 조절 */
+    }
+
+    .fc .fc-daygrid-day-number {
+        font-size: 12px !important;  /* 날짜 숫자 줄이기 */
+    }
 
 }
 
