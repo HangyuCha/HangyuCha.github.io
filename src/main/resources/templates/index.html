@@ -148,7 +148,44 @@
         <!-- 팝업 2~4도 동일한 구조 -->
     </section>
 
-    <section id="achievement">Achievement</section>
+    <section id="achievement" class="achievement-section">
+        <h1 class="achievement-title">Achievement</h1>
+        <div class="achievement-grid">
+            <div class="achievement-item" onclick="openModal('achieve1')">
+                <img src="/images/achieve_thumb1.jpg" alt="Activity 1">
+                <div class="preview-text">문화부 활동</div>
+            </div>
+            <div class="achievement-item" onclick="openModal('achieve2')">
+                <img src="/images/achieve_thumb2.jpg" alt="Activity 2">
+                <div class="preview-text">군복무 기간</div>
+            </div>
+        </div>
+
+        <!-- 팝업 모달: 활동 1 -->
+        <div id="achieve1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve1')">&times;</span>
+                <h2>문화부 활동</h2>
+                <div class="modal-gallery">
+                    <img src="/images/achieve1_1.jpg">
+                    <img src="/images/achieve1_2.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 팝업 모달: 활동 2 -->
+        <div id="achieve2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve2')">&times;</span>
+                <h2>군복무</h2>
+                <div class="modal-gallery">
+                    <img src="/images/achieve2_1.jpg">
+                    <img src="/images/achieve2_2.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="memo">Memo</section>
 </main>
 
