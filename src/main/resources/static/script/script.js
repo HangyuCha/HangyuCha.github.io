@@ -12,6 +12,28 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
+
+const audio = document.getElementById("bg-music");
+const toggleBtn = document.getElementById("music-toggle");
+
+// 버튼 상태 저장 (🔊/🔇)
+toggleBtn.addEventListener("click", () => {if (audio.paused) {
+    audio.play();
+    toggleBtn.textContent = "🔊";
+} else {
+    audio.pause();
+    toggleBtn.textContent = "🔇";
+}
+});
+
+    // 자동 재생 제한 대응 (브라우저 정책 우회)
+window.addEventListener("DOMContentLoaded", () => {audio.play().catch(() => {
+        document.addEventListener("click", () => {
+            audio.play();
+        }, { once: true });
+    });
+});
+
 // 햄버거 메뉴 열고 닫기
 document.querySelector(".menu-toggle").addEventListener("click", () => {
     document.querySelector(".nav-menu").classList.toggle("show");
@@ -32,3 +54,5 @@ window.addEventListener("keydown", function(e) {
         document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
     }
 });
+
+
