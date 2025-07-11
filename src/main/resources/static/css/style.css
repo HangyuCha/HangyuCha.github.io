@@ -494,8 +494,46 @@ section {
 
 /* 반응형 */
 @media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        height: auto;
+        padding: 16px;
+    }
+
     .modal-content img {
-        max-height: 200px;
+        max-height: 180px;
+        width: auto;
+    }
+
+    .modal-slide-content {
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .modal-gallery {
+        gap: 6px;
+        margin-top: 16px;
+    }
+
+    .modal-gallery img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .download-link {
+        font-size: 12px;
+    }
+
+    .innerSwiper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        transform: scale(0.8);
     }
 
     .menu-toggle {
@@ -603,3 +641,4 @@ section {
         height: auto;
     }
 }
+
