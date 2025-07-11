@@ -450,8 +450,15 @@ section {
     top: 10px;
     right: 20px;
     font-size: 28px;
-    color: #333;
+    font-weight: bold;
+    color: #888;
     cursor: pointer;
+
+    /*  터치 영역 확장 */
+    padding: 10px;
+    line-height: 1;
+    background-color: transparent;
+    z-index: 10;
 }
 
 /* 모달 안의 갤러리 */
@@ -715,5 +722,11 @@ section {
         max-width: 120px;
         height: auto;
     }
+
+    .close {
+        font-size: 32px;
+        padding: 16px; /* ✅ 더 넓은 터치 영역 */
+    }
+
 }
 
