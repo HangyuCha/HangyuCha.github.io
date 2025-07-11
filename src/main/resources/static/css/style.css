@@ -453,6 +453,21 @@ section {
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+.swiper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
 /* 반응형 */
