@@ -89,16 +89,19 @@ section {
 /* HOME */
 .home-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center; /* 전체를 중앙 정렬 */
     align-items: center;
     padding-top: 120px;
-    height: 100vh;
+    padding-bottom: 60px;
+    min-height: 100vh;
 }
 .home-container {
     display: flex;
     flex-direction: row;
     gap: 60px;
     align-items: center;
+    flex :1;
 }
 .home-image img {
     width: 220px;
@@ -115,6 +118,33 @@ section {
 .home-text p {
     font-size: 18px;
     color: #444;
+}
+
+/* 하단 링크 이미지 */
+.home-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.home-links a {
+    display: inline-block;
+}
+
+.home-links a img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.home-links a img:hover {
+    transform: scale(1.1);
 }
 
 /* CAREER */
@@ -255,7 +285,7 @@ section {
     color: black;
 }
 
-/* 모달 안의 링크 이미지 */
+/* 팝업 안 링크 이미지 */
 .popup-link-image {
     width: 50px;
     height: 50px;
@@ -265,8 +295,6 @@ section {
 .popup-link-image:hover {
     transform: scale(1.1);
 }
-
-/* 팝업 안 이미지 크기 제한 */
 .popup-Youtube,
 .popup-instagram,
 .popup-Blog {
@@ -282,37 +310,25 @@ section {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
-}
+    text-align: center;
 
-.home-links a img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.home-links a img:hover {
-    transform: scale(1.1);
+    align-self: center;  /* ← 추가! */
 }
 
 
 /* 반응형 */
 @media (max-width: 768px) {
-    .popup-instagram,
-    .popup-Youtube,
-    .popup-Blog {
-        max-width: 120px;
-        height: auto;
-    }
     .modal-content img {
         max-height: 200px;
     }
+
     .menu-toggle {
         display: block;
     }
+
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -321,65 +337,82 @@ section {
         width: 100%;
         margin-top: 10px;
     }
+
     .nav-menu.show {
         display: flex;
     }
+
     .nav-menu a {
         font-size: 16px;
     }
+
     .nav-title {
         font-size: 20px;
         text-align: center;
         width: 100%;
     }
+
     section {
         font-size: 24px;
         padding-top: 100px;
     }
+
     .home-container {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
-    .home-links a img {
-        width: 50px;
-        height: 50px;
-    }
+
     .home-image img {
         width: 180px;
         height: 240px;
     }
+
     .home-text h1 {
         font-size: 22px;
     }
+
     .home-text p {
         font-size: 16px;
     }
+
+    .home-links a img {
+        width: 50px;
+        height: 50px;
+    }
+
     .career-container {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
+
     .career-text {
         text-align: center;
     }
+
     .career-logo img {
         width: 150px;
         height: 150px;
     }
+
     .career-text h1 {
         font-size: 22px;
     }
+
     .career-text h2 {
         font-size: 20px;
     }
+
     .career-text p {
         font-size: 16px;
     }
+
     .hobby-title {
         font-size: 26px;
         margin-top: 30px;
     }
+
     .hobby-label {
         font-size: 14px;
         margin-top: 8px;
@@ -388,5 +421,12 @@ section {
     .popup-link-image {
         width: 40px;
         height: 40px;
+    }
+
+    .popup-instagram,
+    .popup-Youtube,
+    .popup-Blog {
+        max-width: 120px;
+        height: auto;
     }
 }
