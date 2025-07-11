@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hangyu's Portfolio</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+
+
 </head>
 <body>
 <header>
@@ -18,27 +23,46 @@
             <a href="#career">Career</a>
             <a href="#hobby">Hobby</a>
             <a href="#achievement">Achievement</a>
-            <a href="#memo">Memo</a>
+            <a href="#calendar">calender</a>
         </div>
     </nav>
 </header>
 
 <main>
     <section id="home" class="home-section">
+        <!-- 오디오 요소 -->
+        <audio id="bg-music" autoplay loop>
+            <source src="music/love.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <!-- 음악 on/off 버튼 -->
+        <button id="music-toggle">🔊</button>
+
         <div class="home-container">
             <div class="home-image">
-                <img src="/images/profile.JPG" alt="Hangyu's Photo" />
+                <img src="/script/images/profile.JPG" alt="Hangyu's Photo" />
             </div>
             <div class="home-text">
                 <h1>Welcome to Hangyu's Website</h1>
                 <p>Hongik University</p>
             </div>
         </div>
+        <div class="home-links">
+            <a href="https://github.com/HangyuCha" target="_blank">
+                <img src="/script/images/git.png" alt="GitHub">
+            </a>
+            <a href="https://www.instagram.com/lgyu_haanl/" target="_blank">
+                <img src="/script/images/insta.png" alt="Instagram">
+            </a>
+            <a href="https://hangyucha.tistory.com" target="_blank">
+                <img src="/script/images/tistory.png" alt="Blog">
+            </a>
+        </div>
     </section>
     <section id="career" class="career-section">
         <div class="career-container">
             <div class="career-logo">
-                <img src="/images/logo.jpeg" alt="Hongik logo" />
+                <img src="/script/images/logo.jpeg" alt="Hongik logo" />
             </div>
             <div class="career-text">
                 <h1>Hongik University</h1>
@@ -52,6 +76,13 @@
 
                 <h2>Bayswater School in Toronto</h2>
                 <p>(2024.08 ~ 2024.12)</p>
+
+                <h2>Self-directed learning club (N.O.D.E)</h2>
+                <p>(2025.03~2025.06)</p>
+
+                <h2>5th Metaverse Academy in Hongik</h2>
+                <p>(2025.07~2025.12)</p>
+
             </div>
         </div>
     </section>
@@ -59,19 +90,19 @@
         <h1 class="hobby-title">Hobby</h1>
         <div class="hobby-grid">
             <div class="hobby-item" onclick="openModal('modal1')">
-                <img src="/images/hobby1.heic" alt="Hobby 1">
+                <img src="/script/images/hobby1.heic" alt="Hobby 1">
                 <p class="hobby-label">PhtoGraph</p>
             </div>
             <div class="hobby-item" onclick="openModal('modal2')">
-                <img src="/images/hobby2.jpg" alt="Hobby 2">
+                <img src="/script/images/hobby2.jpg" alt="Hobby 2">
                 <p class="hobby-label">Music</p>
             </div>
             <div class="hobby-item" onclick="openModal('modal3')">
-                <img src="/images/hobby3.JPG" alt="Hobby 3">
+                <img src="/script/images/hobby3.JPG" alt="Hobby 3">
                 <p class="hobby-label">Travel</p>
             </div>
             <div class="hobby-item" onclick="openModal('modal4')">
-                <img src="/images/hobby4.JPG" alt="Hobby 4">
+                <img src="/script/images/hobby4.JPG" alt="Hobby 4">
                 <p class="hobby-label">Movie</p>
             </div>
         </div>
@@ -84,7 +115,7 @@
                 <p>When i have spare time, I enjoy taking phogographs.</p>
                 <p>If you want to see my photograph, come and join my instagram.</p>
                 <a href="https://www.instagram.com/lgyu_haanl/" target="_blank">
-                    <img src="/images/instagram.png" alt="Go to Instagram" class="popup-instagram">
+                    <img src="/script/images/instagram.png" alt="Go to Instagram" class="popup-instagram">
                 </a>
             </div>
         </div>
@@ -95,7 +126,7 @@
                 <p>I love Indie music</p>
                 <p>Let me show my Music playlist.</p>
                 <a href="https://music.youtube.com/playlist?list=PL-Q-z6AJAwU9vaMwFvjfsMmjDoOqIYZ7" target="_blank">
-                    <img src="/images/youtube.png" alt="Go to Youtube" class="popup-Youtube">
+                    <img src="/script/images/youtube.png" alt="Go to Youtube" class="popup-Youtube">
                 </a>
             </div>
         </div>
@@ -106,7 +137,7 @@
                 <p>I am ready to go anywhere at any time.</p>
                 <p>you can see my memories through my blog</p>
                 <a href="https://blog.naver.com/hangyucha" target="_blank">
-                    <img src="/images/blog.png" alt="Go to Blog" class="popup-Blog">
+                    <img src="/script/images/blog.png" alt="Go to Blog" class="popup-Blog">
                 </a>
             </div>
         </div>
@@ -122,10 +153,199 @@
         <!-- 팝업 2~4도 동일한 구조 -->
     </section>
 
-    <section id="achievement">Achievement</section>
-    <section id="memo">Memo</section>
-</main>
+    <section id="achievement" class="achievement-section">
+        <h1 class="achievement-title">Achievement</h1>
 
-<script src="/script/script.js"></script>
+        <!-- 슬라이드 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" onclick="openModal('achieve1')">
+                    <img src="/script/images/computer.jpeg" alt="Computer Engineer">
+                    <p class="swiper-caption">Computer Engineer</p>
+                </div>
+                <div class="swiper-slide" onclick="openModal('achieve2')">
+                    <img src="/script/images/business.jpeg" alt="Business">
+                    <p class="swiper-caption">Business</p>
+                </div>
+                <div class="swiper-slide" onclick="openModal('achieve3')">
+                    <img src="/script/images/etc.jpeg" alt= "iberal arts activities">
+                    <p class="swiper-caption">Iberal arts Activities</p>
+                </div>
+                <!-- 필요한 만큼 추가 -->
+            </div>
+            <!-- 네비 버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- 팝업 1 -->
+        <div id="achieve1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve1')">&times;</span>
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Machine Learning (Use LSTM)</h2>
+                            <p>This project uses LSTM to predict district heating demand with time-series data.</p>
+                            <a href="/script/files/ML.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/script/images/ml1.png" alt="LSTM1" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/ml2.png" alt="LSTM2" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/ml3.png" alt="LSTM3" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/ml4.png" alt="LSTM4" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/ml5.png" alt="LSTM5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Making Electronic Scooter (Design)</h2>
+                            <p>I designed a personal electronic scooter focusing on safety and mobility.</p>
+                            <a href="/script/files/Quick.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/script/images/sco1.png" alt="Scooter1" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/sco2.png" alt="Scooter2" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 팝업 2 -->
+        <div id="achieve2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve2')">&times;</span>
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Marketing Anaylize(Chat GPT)</h2>
+                            <p>I analyzed a company called "Chat GPT" from a marketing point of view. </p>
+                            <a href="/script/files/Marketing.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/script/images/m1.png" alt="Chat1" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m2.png" alt="Chat2" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m3.png" alt="Chat3" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m4.png" alt="Chat4" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m5.png" alt="Chat5" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m6.png" alt="Chat4" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/m7.png" alt="Chat5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>University Student Marketing Supporters Activities(3456)</h2>
+                            <p>I completed a college student marketing supporter activity of a company called "3456".</p>
+                            <a href="/script/files/Support.pdf" target="_blank" class="download-link">📄 View Certification (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/script/images/s1.png" alt="3456-1" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/s2.png" alt="3456-2" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/s3.png" alt="3456-3" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/s4.png" alt="3456-4" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/s5.png" alt="3456-5" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/s6.png" alt="3456-6" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
+    <!-- 팝업 3 -->
+        <div id="achieve3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve3')">&times;</span>
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Group Activity(Making Website)</h2>
+                            <p>I made a group called "N.O.D.E" with my friends and made a website. </p>
+                            <a href="/script/files/Node.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/script/images/n1.png" alt="NODE1" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/n2.png" alt="NODE2" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/n3.png" alt="NODE3" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/n4.png" alt="NODE4" onclick="openFullImage(this.src)" />
+                                <img src="/script/images/n5.png" alt="NODE5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar" class="calendar-section">
+        <h1 class="calendar-title">📅 My Schedule</h1>
+        <div id='calendar-container'></div>
+    </section>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="script/script.js"></script>
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        centeredSlides: true,
+        spaceBetween: 20,
+        slidesPerView: 1, // 모바일 기준
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 1 // 큰 화면에서도 하나씩만 보여줄 경우 여기도 1 유지
+            }
+        }
+    });
+
+
+
+    function openModal(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+
+<div id="imageLightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <span id="lightbox-close" style="
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+  ">&times;</span>
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:4px solid white; border-radius:10px;">
+</div>
+
+
+
 </body>
 </html>
