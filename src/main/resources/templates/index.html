@@ -157,10 +157,16 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" onclick="openModal('achieve1')">
-                    <img src="/images/achieve_thumb1.jpg" alt="Computer Engineer">
+                    <img src="/images/computer.jpeg" alt="Computer Engineer">
+                    <p class="swiper-caption">Computer Engineer</p>
                 </div>
                 <div class="swiper-slide" onclick="openModal('achieve2')">
-                    <img src="/images/achieve_thumb2.jpg" alt="Business">
+                    <img src="/images/business.jpeg" alt="Business">
+                    <p class="swiper-caption">Business</p>
+                </div>
+                <div class="swiper-slide" onclick="openModal('achieve3')">
+                    <img src="/images/etc.jpeg" alt= "iberal arts activities">
+                    <p class="swiper-caption">Iberal arts Activities</p>
                 </div>
                 <!-- 필요한 만큼 추가 -->
             </div>
@@ -173,22 +179,112 @@
         <div id="achieve1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('achieve1')">&times;</span>
-                <h2>문화부 활동</h2>
-                <div class="modal-gallery">
-                    <img src="/images/pic4.heic">
-                    <img src="/images/pic5.HEIC">
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Machine Learning (Use LSTM)</h2>
+                            <p>This project uses LSTM to predict district heating demand with time-series data.</p>
+                            <a href="/files/ML.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/images/ml1.png" alt="LSTM1" onclick="openFullImage(this.src)" />
+                                <img src="/images/ml2.png" alt="LSTM2" onclick="openFullImage(this.src)" />
+                                <img src="/images/ml3.png" alt="LSTM3" onclick="openFullImage(this.src)" />
+                                <img src="/images/ml4.png" alt="LSTM4" onclick="openFullImage(this.src)" />
+                                <img src="/images/ml5.png" alt="LSTM5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Making Electronic Scooter (Design)</h2>
+                            <p>I designed a personal electronic scooter focusing on safety and mobility.</p>
+                            <a href="/files/Quick.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/images/sco1.png" alt="Scooter1" onclick="openFullImage(this.src)" />
+                                <img src="/images/sco2.png" alt="Scooter2" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
 
+
         <!-- 팝업 2 -->
         <div id="achieve2" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('achieve2')">&times;</span>
-                <h2>문화부 활동</h2>
-                <div class="modal-gallery">
-                    <img src="/images/pic6.heic">
-                    <img src="/images/pic7.HEIC">
+                <span class="close" onclick="closeModal('achieve1')">&times;</span>
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Marketing Anaylize(Chat GPT)</h2>
+                            <p>I analyzed a company called "Chat GPT" from a marketing point of view. </p>
+                            <a href="/files/Marketing.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/images/m1.png" alt="Chat1" onclick="openFullImage(this.src)" />
+                                <img src="/images/m2.png" alt="Chat2" onclick="openFullImage(this.src)" />
+                                <img src="/images/m3.png" alt="Chat3" onclick="openFullImage(this.src)" />
+                                <img src="/images/m4.png" alt="Chat4" onclick="openFullImage(this.src)" />
+                                <img src="/images/m5.png" alt="Chat5" onclick="openFullImage(this.src)" />
+                                <img src="/images/m6.png" alt="Chat4" onclick="openFullImage(this.src)" />
+                                <img src="/images/m7.png" alt="Chat5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>University Student Marketing Supporters Activities(3456)</h2>
+                            <p>I completed a college student marketing supporter activity of a company called "3456".</p>
+                            <a href="/files/Support.pdf" target="_blank" class="download-link">📄 View Certification (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/images/s1.png" alt="3456-1" onclick="openFullImage(this.src)" />
+                                <img src="/images/s2.png" alt="3456-2" onclick="openFullImage(this.src)" />
+                                <img src="/images/s3.png" alt="3456-3" onclick="openFullImage(this.src)" />
+                                <img src="/images/s4.png" alt="3456-4" onclick="openFullImage(this.src)" />
+                                <img src="/images/s5.png" alt="3456-5" onclick="openFullImage(this.src)" />
+                                <img src="/images/s6.png" alt="3456-6" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
+    <!-- 팝업 3 -->
+        <div id="achieve3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('achieve1')">&times;</span>
+
+                <div class="swiper innerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Page 1 -->
+                        <div class="swiper-slide modal-slide-content">
+                            <h2>Group Activity(Making Website)</h2>
+                            <p>I made a group called "N.O.D.E" with my friends and made a website. </p>
+                            <a href="/files/Node.pdf" target="_blank" class="download-link">📄 View Report (PDF)</a>
+                            <div class="modal-gallery">
+                                <img src="/images/n1.png" alt="NODE1" onclick="openFullImage(this.src)" />
+                                <img src="/images/n2.png" alt="NODE2" onclick="openFullImage(this.src)" />
+                                <img src="/images/n3.png" alt="NODE3" onclick="openFullImage(this.src)" />
+                                <img src="/images/n4.png" alt="NODE4" onclick="openFullImage(this.src)" />
+                                <img src="/images/n5.png" alt="NODE5" onclick="openFullImage(this.src)" />
+                            </div>
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
@@ -228,5 +324,21 @@
     }
 </script>
 
+
+<div id="imageLightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <span id="lightbox-close" style="
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+  ">&times;</span>
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:4px solid white; border-radius:10px;">
+</div>
+
+
+</div>
 </body>
 </html>

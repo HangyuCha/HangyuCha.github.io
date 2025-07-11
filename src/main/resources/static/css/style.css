@@ -338,9 +338,14 @@ section {
 }
 
 .achievement-section {
-    padding: 80px 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     background-color: #f5f5f5;
+    padding: 100px 20px 80px;
+    text-align: center;
 }
 
 .achievement-title {
@@ -349,47 +354,82 @@ section {
     color: #222;
 }
 
-.achievement-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* swiper 전체 크기 */
+.swiper {
+    width: 500px;
+    height: 560px; /* 이미지 450 + 텍스트 여백 */
+    margin-bottom: 40px;
 }
 
-.achievement-item {
-    position: relative;
-    overflow: hidden;
+/* 각 슬라이드 정렬 */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 500px;
+    height: 500px;
+    box-sizing: border-box;
+}
+
+/* 슬라이드 이미지 크기 및 스타일 */
+.swiper-slide img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
-.achievement-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.achievement-item:hover img {
+.swiper-slide img:hover {
     transform: scale(1.05);
-    filter: brightness(60%);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
-.preview-text {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: white;
+/* 이미지 아래 텍스트 */
+.swiper-caption {
     font-size: 18px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s;
+    color: #333;
+    margin-top: 12px;
+    text-align: center;
 }
 
-.achievement-item:hover .preview-text {
-    opacity: 1;
+/* 모달 팝업 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    width: 700px;
+    height: 700px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
 }
 
 /* 모달 안의 갤러리 */
@@ -407,64 +447,37 @@ section {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .modal-gallery img:hover {
     transform: scale(1.1);
 }
 
-.achievement-section {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-.achievement-title {
-    font-size: 36px;
-    margin-bottom: 40px;
+.modal-slide-content {
+    text-align: left;
+    padding: 20px;
 }
 
-.swiper {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+.download-link {
+    font-size: 14px;
+    display: inline-block;
+    margin: 10px 0 20px;
+    color: #0056b3;
 }
-.swiper-slide img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.swiper-slide img:hover {
-    transform: scale(1.05);
+.download-link:hover {
+    text-decoration: underline;
 }
 
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+.modal-gallery img {
+    cursor: zoom-in;
 }
-
-.swiper-slide img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-.swiper {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+#imageLightbox {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
 

@@ -48,6 +48,35 @@ function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
 
+const innerSwiper = new Swiper(".innerSwiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    loop: false
+});
+
+
+function openFullImage(src) {
+    const box = document.getElementById("imageLightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    box.style.display = "flex";
+}
+
+// DOM이 다 로드된 뒤에 닫기 버튼 연결
+window.addEventListener("DOMContentLoaded", function () {
+    const closeBtn = document.getElementById("lightbox-close");
+    const box = document.getElementById("imageLightbox");
+
+    if (closeBtn && box) {
+        closeBtn.addEventListener("click", function () {
+            box.style.display = "none";
+        });
+    }
+});
+
+
 // ESC 키 누르면 닫기
 window.addEventListener("keydown", function(e) {
     if (e.key === "Escape") {
