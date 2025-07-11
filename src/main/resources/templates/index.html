@@ -157,10 +157,10 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" onclick="openModal('achieve1')">
-                    <img src="/images/achieve_thumb1.jpg" alt="활동1">
+                    <img src="/images/achieve_thumb1.jpg" alt="Computer Engineer">
                 </div>
                 <div class="swiper-slide" onclick="openModal('achieve2')">
-                    <img src="/images/achieve_thumb2.jpg" alt="활동2">
+                    <img src="/images/achieve_thumb2.jpg" alt="Business">
                 </div>
                 <!-- 필요한 만큼 추가 -->
             </div>
@@ -203,12 +203,17 @@
 <script>
     const swiper = new Swiper(".mySwiper", {
         loop: true,
-        centeredSlides: true, // 가운데 정렬
-        spaceBetween: 20, // 슬라이드 간 간격
-        slidesPerView: 1, // 한 번에 하나만 보이게
+        centeredSlides: true,
+        spaceBetween: 20,
+        slidesPerView: 1, // 모바일 기준
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 1 // 큰 화면에서도 하나씩만 보여줄 경우 여기도 1 유지
+            }
         }
     });
 
