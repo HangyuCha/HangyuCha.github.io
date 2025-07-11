@@ -353,6 +353,24 @@ section {
     margin-bottom: 40px;
     color: #222;
 }
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.achievement-item {
+    position: relative;
+}
+
+.achievement-item img {
+    position: relative;
+    top: 20px;
+}
+
+
+
 
 /* swiper 전체 크기 */
 .swiper {
@@ -381,7 +399,11 @@ section {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
     cursor: pointer;
+
+    position: relative;
+    top: 40px;
 }
+
 
 .swiper-slide img:hover {
     transform: scale(1.05);
